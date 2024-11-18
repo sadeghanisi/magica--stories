@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme */
+    --color-primary: #FF6B6B;
+    --color-primary-light: #FFB4B4;
+    --color-secondary: #4ECDC4;
+    --color-secondary-light: #A6E4E1;
+    --color-accent: #FFE66D;
+    --color-accent-light: #FFF3B4;
+    --color-background: #F7F9FC;
+    --color-text: #1F2937;
+    --color-text-secondary: #4B5563;
+    --color-surface: #FFFFFF;
+    --color-surface-secondary: #F3F4F6;
+  }
+
+  :root[data-theme="dark"] {
+    --color-primary: #FF8585;
+    --color-primary-light: #FFC7C7;
+    --color-secondary: #66E6DE;
+    --color-secondary-light: #B3F4F0;
+    --color-accent: #FFE66D;
+    --color-accent-light: #FFF3B4;
+    --color-background: #111827;
+    --color-text: #F9FAFB;
+    --color-text-secondary: #D1D5DB;
+    --color-surface: #1F2937;
+    --color-surface-secondary: #374151;
+  }
+
+  body {
+    @apply antialiased bg-background text-text transition-colors duration-200;
+  }
+
+  /* Font Families */
+  .font-primary {
+    font-family: "Comic Sans MS", "Comic Sans", var(--font-family-selected, cursive);
+  }
+
+  .font-opendyslexic {
+    font-family: "OpenDyslexic", "Comic Sans MS", cursive;
+  }
+
+  .font-lexend {
+    font-family: "Lexend", sans-serif;
+  }
+
+  .font-atkinson {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+  }
+
+  .font-andika {
+    font-family: "Andika", sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-full font-bold shadow-lg
+           transform transition-all duration-200 hover:scale-105 hover:shadow-xl
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-white rounded-full font-bold shadow-lg
+           transform transition-all duration-200 hover:scale-105 hover:shadow-xl
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+  }
+
+  .card {
+    @apply bg-surface rounded-3xl shadow-lg p-6 transform transition-all duration-200
+           hover:scale-105 hover:shadow-xl;
+  }
+
+  .input-field {
+    @apply mt-1 block w-full rounded-2xl border-2 border-surface-secondary px-4 py-3
+           shadow-sm focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50
+           placeholder:text-text-secondary placeholder:opacity-60 text-lg bg-surface text-text;
+  }
+
+  .select-field {
+    @apply mt-1 block w-full rounded-2xl border-2 border-surface-secondary px-4 py-3
+           shadow-sm focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50
+           text-lg appearance-none bg-surface text-text;
+  }
+}
+
+/* Font imports */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Import other fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
